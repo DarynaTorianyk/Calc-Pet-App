@@ -11,7 +11,7 @@ body {
   .container__dark-theme-calculator {
     width: 375px;
     height: 812px;
-    background: #17171C;
+    background: var(--color-container-bg);
     margin: 100px 60px 100px; }
 
 .switch {
@@ -67,3 +67,9 @@ input:checked + .slider:before {
   -ms-transform: translateX(41px);
   transform: translateX(41px);
   background-color: #D2D3DA; }
+
+.theme-light {
+  --color-container-bg: #F1F2F3; }
+
+.theme-dark {
+  --color-container-bg: #17171C; }
