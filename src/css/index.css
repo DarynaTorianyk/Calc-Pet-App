@@ -4,15 +4,16 @@ body {
   background: gray; }
 
 .container {
+  height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center; }
   .container__dark-theme-calculator {
     width: 375px;
-    height: 812px;
-    background: #17171C;
-    margin: 100px 60px 100px; }
+    height: auto;
+    background: var(--color-container-bg);
+    margin: auto; }
 
 .switch {
   position: relative;
@@ -20,7 +21,7 @@ body {
   margin: auto;
   width: 72px;
   height: 32px;
-  top: 60px; }
+  margin-top: 60px; }
   .switch__input {
     display: none; }
 
@@ -67,3 +68,9 @@ input:checked + .slider:before {
   -ms-transform: translateX(41px);
   transform: translateX(41px);
   background-color: #D2D3DA; }
+
+.theme-light {
+  --color-container-bg: #F1F2F3; }
+
+.theme-dark {
+  --color-container-bg: #17171C; }

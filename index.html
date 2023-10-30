@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/css/index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/index.css" />
     <title>Calc-pet-app</title>
-</head>
-<body>
-   <div class="container">
-     <div class="container__dark-theme-calculator">
+  </head>
+  <body>
+    <div class="container">
+      <div class="container__dark-theme-calculator">
         <label class="switch">
-            <input type="checkbox">
-                <span class="slider round">
-                    <img
-                      class="sun" 
-                      src="./src/assets/sun.png" 
-                      alt="sun"
-                    >
-                    <img
-                      class="moon" 
-                      src="./src/assets/moon.png" 
-                      alt="moon"
-                    >
-                </span>
+          <input type="checkbox" onchange="toggleTheme()" id="slider" />
+          <span class="slider round">
+            <img class="sun" src="./src/assets/sun.png" alt="sun" />
+            <img class="moon" src="./src/assets/moon.png" alt="moon" />
+          </span>
         </label>
       </div>
     </div>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
