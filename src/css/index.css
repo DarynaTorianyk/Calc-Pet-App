@@ -4,15 +4,16 @@ body {
   background: gray; }
 
 .container {
+  height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center; }
   .container__dark-theme-calculator {
     width: 375px;
-    height: 812px;
+    height: auto;
     background: var(--color-container-bg);
-    margin: 100px 60px 100px; }
+    margin: auto; }
 
 .switch {
   position: relative;
@@ -20,7 +21,7 @@ body {
   margin: auto;
   width: 72px;
   height: 32px;
-  top: 60px; }
+  margin-top: 60px; }
   .switch__input {
     display: none; }
 
