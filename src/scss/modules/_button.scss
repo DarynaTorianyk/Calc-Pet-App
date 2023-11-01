@@ -1,0 +1,64 @@
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 170px auto 60px;
+
+    &__button-numbers {
+        box-sizing: border-box;
+	    margin: 1.5%;
+        border-radius: 24px;
+        border: none;
+        cursor: pointer;
+        width: 22%;
+        height: 72px;
+    }
+}
+
+.grey-color {
+    background-color: $grayColor;
+    color: $whiteColor;
+    font-size: 30px;
+
+    &:active {
+        background-color: 	#DCDCDC;
+        transition: .4s;
+    }
+
+    &__button-text {
+        display:block;
+        margin: 0 auto;
+    }
+}
+
+.purple-color {
+    background-color: $purpleColor;
+    color: $whiteColor;
+    font-size: 30px;
+
+    &:active {
+        background-color: #B0C4DE;
+        transition: .4s;
+    }
+
+    &__button-text {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.dark-gray-color {
+    background-color: $darkGrayColor;
+    color: $whiteColor;
+    font-size: 30px;
+
+    &:active {
+        background-color: #A9A9A9;
+        transition: .4s;
+    }
+
+    &__button-text {
+       display: block;
+       margin: 0 auto;
+    }
+}
