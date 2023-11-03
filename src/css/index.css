@@ -74,3 +74,50 @@ input:checked + .slider:before {
 
 .theme-dark {
   --color-container-bg: #17171C; }
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 170px auto 60px; }
+  .buttons__button-numbers {
+    box-sizing: border-box;
+    margin: 1.5%;
+    border-radius: 24px;
+    border: none;
+    cursor: pointer;
+    width: 22%;
+    height: 72px; }
+
+.grey-color {
+  background-color: #4E505F;
+  color: #FFFFFF;
+  font-size: 30px; }
+  .grey-color:active {
+    background-color: #DCDCDC;
+    transition: .4s; }
+  .grey-color__button-text {
+    display: block;
+    margin: 0 auto; }
+
+.purple-color {
+  background-color: #4B5EFC;
+  color: #FFFFFF;
+  font-size: 30px; }
+  .purple-color:active {
+    background-color: #B0C4DE;
+    transition: .4s; }
+  .purple-color__button-text {
+    display: block;
+    margin: 0 auto; }
+
+.dark-gray-color {
+  background-color: #2E2F38;
+  color: #FFFFFF;
+  font-size: 30px; }
+  .dark-gray-color:active {
+    background-color: #A9A9A9;
+    transition: .4s; }
+  .dark-gray-color__button-text {
+    display: block;
+    margin: 0 auto; }
