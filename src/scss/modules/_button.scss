@@ -15,25 +15,26 @@
     }
 }
 
-.grey-color {
-    background-color: $grayColor;
-    color: $whiteColor;
+.gray-color {
+    background-color: var(--color-button-bg-gray);
+    color: var(--color-button-font-color);
     font-size: 30px;
 
     &:active {
-        background-color: 	#DCDCDC;
+        background-color: var(--color-button-active-bg);
         transition: .4s;
     }
 
     &__button-text {
         display:block;
         margin: 0 auto;
+        filter: var(--color-button-img);
     }
 }
 
 .purple-color {
-    background-color: $purpleColor;
-    color: $whiteColor;
+    background-color: var(--color-button-bg-purple);
+    color: var(--color-button-font-color);
     font-size: 30px;
 
     &:active {
@@ -48,8 +49,8 @@
 }
 
 .dark-gray-color {
-    background-color: $darkGrayColor;
-    color: $whiteColor;
+    background-color: var(--color-button-bg-dark);
+    color: var(--color-button-font-color);
     font-size: 30px;
 
     &:active {
@@ -60,5 +61,6 @@
     &__button-text {
        display: block;
        margin: 0 auto;
+       filter: var(--color-button-img);
     }
 }
