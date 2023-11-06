@@ -1,14 +1,14 @@
-.calculatorInput {
+.subCalculatorInput {
     display: flex;
     width: 87%;
-    margin: 16px auto 0;
+    margin: 55px auto 0;
     padding: 0px;
 
     border: none;
-    font-size: 96px;
+    font-size: 40px;
     font-family: 'Work Sans', sans-serif;
     font-weight: lighter;
-    color: var(--color-input-calculatorInput-font);
+    color: var(--color-input-subCalculatorInput-font);
     background-color: var(--color-input-calculatorInput-bg);
     outline: none;
     text-align: right;
