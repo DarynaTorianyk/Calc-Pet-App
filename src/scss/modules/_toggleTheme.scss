@@ -1,8 +1,20 @@
 .theme-light {
     --color-container-bg: #F1F2F3;
+    --color-button-bg-dark: #FFFFFF;
+    --color-button-bg-gray: #D2D3DA;
+    --color-button-bg-purple: #4B5EFC;
+    --color-button-font-color: #000000;
+    --color-button-img: invert(1);
+    --color-button-active-bg: #FFFFFF;
+
  }
  
  .theme-dark {
      --color-container-bg: #17171C;
+     --color-button-bg-dark: #2E2F38;
+     --color-button-bg-gray: #4E505F;
+     --color-button-bg-purple: #4B5EFC;
+     --color-button-font-color: #FFFFFF;
+     --color-button-active-bg: #DCDCDC;
  }
  
