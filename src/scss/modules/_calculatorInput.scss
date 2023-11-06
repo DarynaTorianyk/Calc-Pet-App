@@ -1,0 +1,15 @@
+.calculatorInput {
+    display: flex;
+    width: 87%;
+    margin: 118px auto 0;
+    padding: 0px;
+
+    border: none;
+    font-size: 96px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: lighter;
+    color: var(--color-input-calculatorInput-font);
+    background-color: var(--color-input-calculatorInput-bg);
+    outline: none;
+    text-align: right;
+}

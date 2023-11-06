@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 90%;
-    margin: 170px auto 60px;
+    margin: 0 auto 66px;
 
     &__button-numbers {
         box-sizing: border-box;
@@ -18,7 +18,8 @@
 .gray-color {
     background-color: var(--color-button-bg-gray);
     color: var(--color-button-font-color);
-    font-size: 30px;
+    font-size: 32px;
+    font-family: 'Work Sans', sans-serif;
 
     &:active {
         background-color: var(--color-button-active-bg);
@@ -35,7 +36,8 @@
 .purple-color {
     background-color: var(--color-button-bg-purple);
     color: var(--color-button-font-color);
-    font-size: 30px;
+    font-size: 32px;
+    font-family: 'Work Sans', sans-serif;
 
     &:active {
         background-color: #B0C4DE;
@@ -51,7 +53,8 @@
 .dark-gray-color {
     background-color: var(--color-button-bg-dark);
     color: var(--color-button-font-color);
-    font-size: 30px;
+    font-size: 32px;
+    font-family: 'Work Sans', sans-serif;
 
     &:active {
         background-color: #A9A9A9;

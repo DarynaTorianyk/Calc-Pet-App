@@ -76,7 +76,9 @@ input:checked + .slider:before {
   --color-button-bg-purple: #4B5EFC;
   --color-button-font-color: #000000;
   --color-button-img: invert(1);
-  --color-button-active-bg: #FFFFFF; }
+  --color-button-active-bg: #FFFFFF;
+  --color-input-calculatorInput-bg: #F1F2F3;
+  --color-input-calculatorInput-font: #000000; }
 
 .theme-dark {
   --color-container-bg: #17171C;
@@ -84,13 +86,15 @@ input:checked + .slider:before {
   --color-button-bg-gray: #4E505F;
   --color-button-bg-purple: #4B5EFC;
   --color-button-font-color: #FFFFFF;
-  --color-button-active-bg: #DCDCDC; }
+  --color-button-active-bg: #DCDCDC;
+  --color-input-calculatorInput-bg: #17171C;
+  --color-input-calculatorInput-font: #FFFFFF; }
 
 .buttons {
   display: flex;
   flex-wrap: wrap;
   width: 90%;
-  margin: 170px auto 60px; }
+  margin: 0 auto 66px; }
   .buttons__button-numbers {
     box-sizing: border-box;
     margin: 1.5%;
@@ -103,7 +107,8 @@ input:checked + .slider:before {
 .gray-color {
   background-color: var(--color-button-bg-gray);
   color: var(--color-button-font-color);
-  font-size: 30px; }
+  font-size: 32px;
+  font-family: 'Work Sans', sans-serif; }
   .gray-color:active {
     background-color: var(--color-button-active-bg);
     transition: .4s; }
@@ -115,7 +120,8 @@ input:checked + .slider:before {
 .purple-color {
   background-color: var(--color-button-bg-purple);
   color: var(--color-button-font-color);
-  font-size: 30px; }
+  font-size: 32px;
+  font-family: 'Work Sans', sans-serif; }
   .purple-color:active {
     background-color: #B0C4DE;
     transition: .4s; }
@@ -126,7 +132,8 @@ input:checked + .slider:before {
 .dark-gray-color {
   background-color: var(--color-button-bg-dark);
   color: var(--color-button-font-color);
-  font-size: 30px; }
+  font-size: 32px;
+  font-family: 'Work Sans', sans-serif; }
   .dark-gray-color:active {
     background-color: #A9A9A9;
     transition: .4s; }
@@ -134,3 +141,17 @@ input:checked + .slider:before {
     display: block;
     margin: 0 auto;
     filter: var(--color-button-img); }
+
+.calculatorInput {
+  display: flex;
+  width: 87%;
+  margin: 118px auto 0;
+  padding: 0px;
+  border: none;
+  font-size: 96px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: lighter;
+  color: var(--color-input-calculatorInput-font);
+  background-color: var(--color-input-calculatorInput-bg);
+  outline: none;
+  text-align: right; }
