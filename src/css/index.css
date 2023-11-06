@@ -78,7 +78,8 @@ input:checked + .slider:before {
   --color-button-img: invert(1);
   --color-button-active-bg: #FFFFFF;
   --color-input-calculatorInput-bg: #F1F2F3;
-  --color-input-calculatorInput-font: #000000; }
+  --color-input-calculatorInput-font: #000000;
+  --color-input-subCalculatorInput-font: #4E505F; }
 
 .theme-dark {
   --color-container-bg: #17171C;
@@ -88,7 +89,8 @@ input:checked + .slider:before {
   --color-button-font-color: #FFFFFF;
   --color-button-active-bg: #DCDCDC;
   --color-input-calculatorInput-bg: #17171C;
-  --color-input-calculatorInput-font: #FFFFFF; }
+  --color-input-calculatorInput-font: #FFFFFF;
+  --color-input-subCalculatorInput-font: #4E505F; }
 
 .buttons {
   display: flex;
@@ -145,13 +147,27 @@ input:checked + .slider:before {
 .calculatorInput {
   display: flex;
   width: 87%;
-  margin: 118px auto 0;
+  margin: 16px auto 0;
   padding: 0px;
   border: none;
   font-size: 96px;
   font-family: 'Work Sans', sans-serif;
   font-weight: lighter;
   color: var(--color-input-calculatorInput-font);
+  background-color: var(--color-input-calculatorInput-bg);
+  outline: none;
+  text-align: right; }
+
+.subCalculatorInput {
+  display: flex;
+  width: 87%;
+  margin: 55px auto 0;
+  padding: 0px;
+  border: none;
+  font-size: 40px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: lighter;
+  color: var(--color-input-subCalculatorInput-font);
   background-color: var(--color-input-calculatorInput-bg);
   outline: none;
   text-align: right; }
