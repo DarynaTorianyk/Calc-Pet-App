@@ -20,3 +20,25 @@ function toggleTheme() {
             document.getElementById('slider').checked = true;
             }
 })();
+
+
+const buttons = document.querySelectorAll('.buttons__buttonNumbers');
+
+function buttonAnimation(event) {
+    const circle = document.createElement('div');
+    const x = event.layerX;
+    const y = event.layerY;
+    circle.classList.add('circle');
+    circle.style.left = `${x}px`;
+    circle.style.top = `${y}px`;
+
+    this.appendChild(circle);
+
+    circle.addEventListener('animationend', () => {
+    this.removeChild(circle);
+})
+}
+
+for (let button of buttons) {
+    button.addEventListener('click', buttonAnimation);
+};
