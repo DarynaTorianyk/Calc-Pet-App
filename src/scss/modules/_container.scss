@@ -10,5 +10,8 @@
         height: auto;
         background: var(--color-container-bg);
         margin:  auto;
+        overflow: hidden;
+        transition: all 0.2s;
+        z-index: 1;
     }
 }
