@@ -100,7 +100,7 @@ input:checked + .slider:before {
   flex-wrap: wrap;
   width: 90%;
   margin: 0 auto 66px; }
-  .buttons__buttonNumbers {
+  .buttons__numbers {
     box-sizing: border-box;
     position: relative;
     width: 22%;
@@ -112,7 +112,7 @@ input:checked + .slider:before {
     overflow: hidden;
     transition: background-color 0.2s;
     z-index: 1; }
-    .buttons__buttonNumbers .circle {
+    .buttons__numbers .circle {
       position: absolute;
       border-radius: 50%;
       pointer-events: none;

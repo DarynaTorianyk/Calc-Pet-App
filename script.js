@@ -22,7 +22,7 @@ function toggleTheme() {
 })();
 
 
-const buttons = document.querySelectorAll('.buttons__buttonNumbers');
+const buttons = document.querySelectorAll('.buttons__numbers');
 const calculatorInput = document.querySelector('.calculatorInput');
 const subCalculatorInput = document.querySelector('.subCalculatorInput');
 
@@ -46,10 +46,9 @@ function handleNumberClick(number) {
 }
 
 function handleOperatorClick(op) {
-  if (currentInput !== '') {
-    if (previousInput !== '') {
-      performCalculation();
-    }
+  if (currentInput !== '' || previousInput !== '') {
+    performCalculation();
+
     operator = op;
     previousInput = currentInput;
     currentInput = '';
@@ -71,19 +70,28 @@ function handleClearClick() {
   updateDisplay();
 }
 
-function handlePlusMinusClick(currentInput) {
+function handlePlusMinusClick() {
   if (currentInput !== '') {
     currentInput = (parseFloat(currentInput) * -1).toString();
     updateDisplay();
-    
+  }
+}
+
+function updateDisplayForPercentClick() {
+  if (previousInput !== '') {
+    calculatorInput.value = currentInput;
+    subCalculatorInput.value = `${parseFloat(currentInput)}`;
+  } else {
+    calculatorInput.value = currentInput;
+    subCalculatorInput.value = currentInput;
   }
 }
 
 function handlePercentClick() {
   if (currentInput !== '' && previousInput !== '') {
-    const percentage = parseFloat(currentInput) * (parseFloat(previousInput) / 100);
+    const percentage = parseFloat(previousInput) * (parseFloat(currentInput) / 100);
     currentInput = (parseFloat(previousInput) - percentage).toString();
-    updateDisplay();
+    updateDisplayForPercentClick();
   }
 }
 
@@ -158,4 +166,3 @@ for (let button of buttons) {
     }
   });
 }
-
