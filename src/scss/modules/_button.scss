@@ -94,15 +94,20 @@
     }
 }
 
+.active {
+    background-color: var(--color-active-operatorButton-bg);
+    color: var(--color-active-operatorButton-font);
+}
+
 .dark-gray-color {
     background-color: var(--color-button-bg-dark);
     color: var(--color-button-font-color);
     font-size: 32px;
     font-family: 'Work Sans', sans-serif;
+}
 
-    &__button-text {
-       display: block;
-       margin: 0 auto;
-       filter: var(--color-button-img);
-    }
-};
+.zero {
+  width: 47%;
+  text-align: left;
+  padding-left: 28px;
+}

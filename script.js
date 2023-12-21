@@ -25,10 +25,12 @@ function toggleTheme() {
 const buttons = document.querySelectorAll('.buttons__numbers');
 const calculatorInput = document.querySelector('.calculatorInput');
 const subCalculatorInput = document.querySelector('.subCalculatorInput');
+const operatorButtons = document.querySelectorAll('.purple-color');
 
 let currentInput = '';
 let previousInput = '';
 let operator = '';
+const MAX_DIGITS = 9;
 
 function updateDisplay() {
   if (previousInput !== '') {
@@ -41,17 +43,39 @@ function updateDisplay() {
 }
 
 function handleNumberClick(number) {
-  currentInput += number;
-  updateDisplay();
+  if (currentInput.length < MAX_DIGITS) {
+    currentInput += number;
+
+    if (currentInput.length == 6) {
+      calculatorInput.classList.add('small-font');
+    }  else if (currentInput.length >= 8) {
+      calculatorInput.classList.remove('small-font');
+      calculatorInput.classList.add('evenLess');    
+    } else {
+      calculatorInput.classList.remove('evenLess');
+    }
+
+    updateDisplay();
+  }
+
+  operatorButtons.forEach(button => button.classList.remove('active'));
 }
+
 
 function handleOperatorClick(op) {
   if (currentInput !== '' || previousInput !== '') {
-    performCalculation();
 
-    operator = op;
-    previousInput = currentInput;
-    currentInput = '';
+    if (operator && currentInput !== '') {
+      performCalculation();
+    } else {
+      if (previousInput !== '' && currentInput === '') {
+      operator = op;
+      } else {
+      operator = op;
+      previousInput = currentInput;
+      }
+      currentInput = '';
+    }
     updateDisplay();
   }
 }
@@ -68,6 +92,11 @@ function handleClearClick() {
   previousInput = '';
   operator = '';
   updateDisplay();
+
+  operatorButtons.forEach(button => button.classList.remove('active'));
+
+  calculatorInput.classList.remove('small-font');
+  calculatorInput.classList.remove('evenLess');
 }
 
 function handlePlusMinusClick() {
@@ -80,7 +109,7 @@ function handlePlusMinusClick() {
 function updateDisplayForPercentClick() {
   if (previousInput !== '') {
     calculatorInput.value = currentInput;
-    subCalculatorInput.value = `${parseFloat(currentInput)}`;
+    subCalculatorInput.value = `${currentInput}`;
   } else {
     calculatorInput.value = currentInput;
     subCalculatorInput.value = currentInput;
@@ -88,21 +117,32 @@ function updateDisplayForPercentClick() {
 }
 
 function handlePercentClick() {
-  if (currentInput !== '' && previousInput !== '') {
-    const percentage = parseFloat(previousInput) * (parseFloat(currentInput) / 100);
-    currentInput = (parseFloat(previousInput) - percentage).toString();
+  if (previousInput !== '' && currentInput !== '') {
+    const result = parseFloat(previousInput) - (parseFloat(previousInput) * parseFloat(currentInput) / 100);
+    currentInput = result.toString();
+
     updateDisplayForPercentClick();
   }
 }
 
 function handleDeleteClick() {
-  currentInput = currentInput.slice(0, -1);
+  if (operator.length > 0) {
+    if (!isNaN(currentInput.slice(-1))) {
+      currentInput = currentInput.slice(0, -1);
+    }
+    operator = operator.slice(0, -1);
+  } else if (currentInput.length > 0) {
+    currentInput = currentInput.slice(0, -1);
+  }
   updateDisplay();
+
+  operatorButtons.forEach(button => button.classList.remove('active'));
 }
 
 function performCalculation() {
   const num1 = parseFloat(previousInput);
   const num2 = parseFloat(currentInput);
+
   switch (operator) {
     case '+':
       currentInput = (num1 + num2).toString();
@@ -110,7 +150,7 @@ function performCalculation() {
     case '-':
       currentInput = (num1 - num2).toString();
       break;
-    case 'X':
+    case 'x':
       currentInput = (num1 * num2).toString();
       break;
     case '/':
@@ -165,4 +205,15 @@ for (let button of buttons) {
         break;
     }
   });
+}
+
+for(let operatorButton of operatorButtons) {
+  operatorButton.addEventListener('click', function () {
+    if (operatorButton.textContent === '=') {
+      return;
+    }
+    operatorButtons.forEach(button => button.classList.remove('active'));
+
+    operatorButton.classList.add('active');
+  })
 }
