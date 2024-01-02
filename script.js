@@ -38,36 +38,35 @@ function updateDisplay() {
     subCalculatorInput.value = `${previousInput}${operator}${currentInput}`;
   } else {
     calculatorInput.value = currentInput;
-    subCalculatorInput.value = currentInput;
-  }
+    subCalculatorInput.value = subCalculatorInput.value;
+  };
 }
 
 function handleNumberClick(number) {
   if (currentInput.length < MAX_DIGITS) {
     currentInput += number;
+  };
 
     if (currentInput.length == 6) {
       calculatorInput.classList.add('small-font');
-    }  else if (currentInput.length >= 8) {
+    } else if (currentInput.length >= 8) {
       calculatorInput.classList.remove('small-font');
       calculatorInput.classList.add('evenLess');    
     } else {
       calculatorInput.classList.remove('evenLess');
-    }
+    };
 
     updateDisplay();
-  }
 
   operatorButtons.forEach(button => button.classList.remove('active'));
 }
 
 
 function handleOperatorClick(op) {
-  if (currentInput !== '' || previousInput !== '') {
-
     if (operator && currentInput !== '') {
       performCalculation();
-    } else {
+    };
+
       if (previousInput !== '' && currentInput === '') {
       operator = op;
       } else {
@@ -75,22 +74,23 @@ function handleOperatorClick(op) {
       previousInput = currentInput;
       }
       currentInput = '';
-    }
+    
     updateDisplay();
-  }
 }
 
 function handleEqualsClick() {
   if (previousInput !== '' && currentInput !== '') {
     performCalculation();
     operator = '';
-  }
+  };
 }
+
 
 function handleClearClick() {
   currentInput = '';
   previousInput = '';
   operator = '';
+  subCalculatorInput.value = '';
   updateDisplay();
 
   operatorButtons.forEach(button => button.classList.remove('active'));
@@ -103,7 +103,7 @@ function handlePlusMinusClick() {
   if (currentInput !== '') {
     currentInput = (parseFloat(currentInput) * -1).toString();
     updateDisplay();
-  }
+  };
 }
 
 function updateDisplayForPercentClick() {
@@ -113,7 +113,7 @@ function updateDisplayForPercentClick() {
   } else {
     calculatorInput.value = currentInput;
     subCalculatorInput.value = currentInput;
-  }
+  };
 }
 
 function handlePercentClick() {
@@ -122,21 +122,7 @@ function handlePercentClick() {
     currentInput = result.toString();
 
     updateDisplayForPercentClick();
-  }
-}
-
-function handleDeleteClick() {
-  if (operator.length > 0) {
-    if (!isNaN(currentInput.slice(-1))) {
-      currentInput = currentInput.slice(0, -1);
-    }
-    operator = operator.slice(0, -1);
-  } else if (currentInput.length > 0) {
-    currentInput = currentInput.slice(0, -1);
-  }
-  updateDisplay();
-
-  operatorButtons.forEach(button => button.classList.remove('active'));
+  };
 }
 
 function performCalculation() {
@@ -192,9 +178,6 @@ for (let button of buttons) {
         break;
       case '=':
         handleEqualsClick();
-        break;
-      case 'del':
-        handleDeleteClick();
         break;
       default:
         if (!isNaN(parseFloat(buttonText)) || buttonText === '.') {
