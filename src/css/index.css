@@ -4,19 +4,35 @@ body {
   background: gray; }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center; }
   .container__dark-theme-calculator {
     width: 375px;
-    height: auto;
+    max-width: 100%;
+    min-height: auto;
     background: var(--color-container-bg);
     margin: auto;
     overflow: hidden;
     transition: all 0.2s;
     z-index: 1; }
+    @media (max-width: 480px) {
+      .container__dark-theme-calculator {
+        width: 98%; } }
+    @media (min-width: 800px) and (max-width: 1080px) {
+      .container__dark-theme-calculator {
+        width: 42%; } }
+    @media (min-width: 1080px) and (max-width: 1280px) {
+      .container__dark-theme-calculator {
+        width: 35%; } }
+    @media (min-width: 1280px) and (max-width: 1920px) {
+      .container__dark-theme-calculator {
+        width: 27%; } }
+    @media (min-width: 1920px) and (max-width: 2380px) {
+      .container__dark-theme-calculator {
+        width: 19%; } }
 
 .switch {
   position: relative;
@@ -116,6 +132,21 @@ input:checked + .slider:before {
     overflow: hidden;
     transition: background-color 0.2s;
     z-index: 1; }
+    @media (max-width: 480px) {
+      .buttons__numbers {
+        width: 22%; } }
+    @media (min-width: 800px) and (max-width: 1080px) {
+      .buttons__numbers {
+        width: 22%; } }
+    @media (min-width: 1080px) and (max-width: 1280px) {
+      .buttons__numbers {
+        width: 22%; } }
+    @media (min-width: 1280px) and (max-width: 1920px) {
+      .buttons__numbers {
+        width: 22%; } }
+    @media (min-width: 1920px) and (max-width: 2380px) {
+      .buttons__numbers {
+        width: 22%; } }
     .buttons__numbers .circle {
       position: absolute;
       border-radius: 50%;
